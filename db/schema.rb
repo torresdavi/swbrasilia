@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_26_223746) do
+ActiveRecord::Schema.define(version: 2019_01_26_231909) do
 
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "table_id"
@@ -73,6 +73,13 @@ ActiveRecord::Schema.define(version: 2019_01_26_223746) do
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_tables_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_tables_on_reset_password_token", unique: true
     t.index ["restaurant_id"], name: "index_tables_on_restaurant_id"
   end
 
