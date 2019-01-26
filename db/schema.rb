@@ -10,24 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_26_195643) do
+ActiveRecord::Schema.define(version: 2019_01_26_223746) do
 
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "restaurant_id"
+    t.bigint "table_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["restaurant_id"], name: "index_customers_on_restaurant_id"
+    t.index ["table_id"], name: "index_customers_on_table_id"
   end
 
   create_table "order_products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "order_id"
     t.bigint "product_id"
+    t.string "customer"
     t.integer "quantity"
-    t.bigint "customer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["customer_id"], name: "index_order_products_on_customer_id"
     t.index ["order_id"], name: "index_order_products_on_order_id"
     t.index ["product_id"], name: "index_order_products_on_product_id"
   end
@@ -85,8 +84,7 @@ ActiveRecord::Schema.define(version: 2019_01_26_195643) do
     t.index ["restaurant_id"], name: "index_waiters_on_restaurant_id"
   end
 
-  add_foreign_key "customers", "restaurants"
-  add_foreign_key "order_products", "customers"
+  add_foreign_key "customers", "tables"
   add_foreign_key "order_products", "orders"
   add_foreign_key "order_products", "products"
   add_foreign_key "orders", "tables"
