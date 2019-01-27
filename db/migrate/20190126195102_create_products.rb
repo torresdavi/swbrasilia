@@ -4,7 +4,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.references :restaurant, foreign_key: true
       t.string :name
       t.string :description
-      t.string :price
+      t.float :price
 
       t.timestamps
     end

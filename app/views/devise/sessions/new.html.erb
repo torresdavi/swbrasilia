@@ -1,0 +1,28 @@
+
+
+
+
+<h1 align = 'center'>Em qual mesa você está?</h1>
+
+<div class="col-md-6"> 
+<div class='row' align='center'>
+    <div class="login-box">
+      <div class='col-xs-12'>
+        <div class="login-box-content">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="form-group">
+              <div class="col-sm-offset-1  col-sm-10">
+                <%= f.text_field :email, class: "form-control fa", placeholder: "Mesa", autofocus: true %>
+                <br><br>
+                <%= f.password_field :password, class: "form-control fa", placeholder: "Senha" , autocomplete: "current-password" %>
+                <br><br>
+                <%= f.submit "login", class: 'btn btn-primary', style: "width: 70%" %>
+
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>
