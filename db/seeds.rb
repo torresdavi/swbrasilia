@@ -16,3 +16,5 @@ Table.create(email: '02', password: '123456', restaurant: restaurant)
 Table.create(email: '03', password: '123456', restaurant: restaurant)
 Table.create(email: '04', password: '123456', restaurant: restaurant)
 Table.create(email: '05', password: '123456', restaurant: restaurant)
+
+Product.create(name: 'Pepsi', price: 8.00)

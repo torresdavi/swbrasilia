@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2019_01_27_000411) do
     t.bigint "restaurant_id"
     t.string "name"
     t.string "description"
-    t.string "price"
+    t.float "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "category_products_id"
