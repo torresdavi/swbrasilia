@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 2019_01_27_000411) do
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "number"
     t.float "total_price"
+    t.string "obs"
+    t.string "customer"
     t.bigint "table_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -53,8 +55,8 @@ ActiveRecord::Schema.define(version: 2019_01_27_000411) do
     t.float "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "category_products_id"
-    t.index ["category_products_id"], name: "index_products_on_category_products_id"
+    t.bigint "category_product_id"
+    t.index ["category_product_id"], name: "index_products_on_category_product_id"
     t.index ["restaurant_id"], name: "index_products_on_restaurant_id"
   end
 
@@ -103,7 +105,7 @@ ActiveRecord::Schema.define(version: 2019_01_27_000411) do
   add_foreign_key "order_products", "orders"
   add_foreign_key "order_products", "products"
   add_foreign_key "orders", "tables"
-  add_foreign_key "products", "category_products", column: "category_products_id"
+  add_foreign_key "products", "category_products"
   add_foreign_key "products", "restaurants"
   add_foreign_key "reviews", "restaurants"
   add_foreign_key "tables", "restaurants"

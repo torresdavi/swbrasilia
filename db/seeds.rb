@@ -8,7 +8,7 @@
 
 restaurant = Restaurant.create(name: 'Saborido', phone: '6140028922')
 
-CategoryProduct.create(name: 'Bebidas')
+cp = CategoryProduct.create(name: 'Bebidas')
 CategoryProduct.create(name: 'Almoços')
 
 Table.create(email: '01', password: '123456', restaurant: restaurant)
@@ -17,4 +17,4 @@ Table.create(email: '03', password: '123456', restaurant: restaurant)
 Table.create(email: '04', password: '123456', restaurant: restaurant)
 Table.create(email: '05', password: '123456', restaurant: restaurant)
 
-Product.create(name: 'Pepsi', price: 8.00)
+Product.create(name: 'Pepsi', price: 8.00, description: 'Muito boa', restaurant: restaurant, category_product: cp)
