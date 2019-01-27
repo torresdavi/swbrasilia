@@ -12,11 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :restaurant_id %>
-    <%= form.text_field :restaurant_id %>
-  </div>
-
-  <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
@@ -29,6 +24,12 @@
   <div class="field">
     <%= form.label :price %>
     <%= form.text_field :price %>
+  </div>
+
+  <div>
+    <%= form.fields_for :category_product do |category_product_fields| %>
+      <%= category_product_fields_fields.select("category_product", "category_product_id", CategoryProduct.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }) %>
+    <% end %>
   </div>
 
   <div class="actions">
