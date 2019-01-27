@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  resources :product_categories
   devise_for :tables
   resources :customers
   resources :orders
   resources :waiters
   resources :tables
   resources :products
-  resource :restaurant
+  resources :restaurants
 
   root 'restaurants#index'
 

@@ -8,6 +8,9 @@
 
 restaurant = Restaurant.create(name: 'Saborido', phone: '6140028922')
 
+CategoryProduct.create(name: 'Bebidas')
+CategoryProduct.create(name: 'Almoços')
+
 Table.create(email: '01', password: '123456', restaurant: restaurant)
 Table.create(email: '02', password: '123456', restaurant: restaurant)
 Table.create(email: '03', password: '123456', restaurant: restaurant)
