@@ -25,6 +25,7 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
+    byebug
     @product = Product.new(product_params)
     @product.restaurant = current_restaurant
     
@@ -71,6 +72,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:restaurant_id, :name, :description, :price)
+      params.require(:product).permit(:restaurant_id, :name, :description, :price, :category_product)
     end
 end
