@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :tables
   resources :products
   resources :restaurants
+  resources :home
 
   root 'products#index'
 
